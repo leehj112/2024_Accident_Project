@@ -18,7 +18,6 @@ url = search_url + search_query
 
 html_weather = requests.get(url).text
 soup_weather = BeautifulSoup(html_weather, "lxml")
-print(url,'\n')
 
 # 현재 온도
 current_temperature = soup_weather.find("div", {"class": "temperature_text"}).text.replace('현재 온도', '')
@@ -58,7 +57,6 @@ url = search_url + search_query
 
 html_weather = requests.get(url).text
 soup_weather = BeautifulSoup(html_weather, "lxml")
-print(url,'\n')
 
 # 현재 온도
 current_temperature = soup_weather.find("div", {"class": "temperature_text"}).text.replace('현재 온도', '')
@@ -98,7 +96,6 @@ url = search_url + search_query
 
 html_weather = requests.get(url).text
 soup_weather = BeautifulSoup(html_weather, "lxml")
-print(url,'\n')
 
 # 현재 온도
 current_temperature = soup_weather.find("div", {"class": "temperature_text"}).text.replace('현재 온도', '')
@@ -138,7 +135,6 @@ url = search_url + search_query
 
 html_weather = requests.get(url).text
 soup_weather = BeautifulSoup(html_weather, "lxml")
-print(url,'\n')
 
 # 현재 온도
 current_temperature = soup_weather.find("div", {"class": "temperature_text"}).text.replace('현재 온도', '')
