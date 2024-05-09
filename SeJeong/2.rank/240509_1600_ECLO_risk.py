@@ -267,7 +267,7 @@ ax1 = fig.add_subplot(1,2,1)
 ax2 = fig.add_subplot(1,2,2)
 sns.scatterplot(accident_risk_fil1, x='eclo_risk_sum', y='사고건수', ax=ax1)
 sns.scatterplot(accident_risk_fil1, x='eclo_risk_mul', y='사고건수', ax=ax2)
-plt.show()
+plt.show()  
 
 # 사고건수 9 이하(3분위) 데이터 추출
 accident_risk_fil2 = accident_risk.loc[accident_risk['사고건수'] <= 9]
