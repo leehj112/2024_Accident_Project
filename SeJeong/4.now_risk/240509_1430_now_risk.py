@@ -87,7 +87,7 @@ print(gu_score)
 #%%
 from datetime import datetime
 
-# 함수
+# 함수 1 : 구별 값(table) 반환
 """
 요인
 - 주야간(자동) : 현재 시간 기준 자동반영
@@ -138,6 +138,7 @@ print(gu_score)
 """
 
 #%%
+# 함수 2 : 값 반환
 """
 요인
 - 주야간(자동) : 현재 시간 기준 자동반영
