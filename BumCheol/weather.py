@@ -21,10 +21,17 @@ soup_weather = BeautifulSoup(html_weather, "lxml")
 print(url,'\n')
 
 # 현재 온도
-current_temperature = soup_weather.find("div", {"class": "temperature_text"}).text
+current_temperature = soup_weather.find("div", {"class": "temperature_text"}).text.replace('현재 온도', '')
+# current_temperature = soup_weather.select_one('div.temperature_text strong').get_text().replace('현재 온도', '')
 
 # 현재 날씨
 current_weather_condition = soup_weather.find("p", {"class": "summary"}).text
+# current_weather_condition = soup_weather.select_one('span.weather before_slash').get_text()
+
+# 오전 강수 확률
+morning_rainfall = soup_weather.find("span", class_="rainfall").text
+# 오후 강수 확률
+afternoon_rainfall = soup_weather.find_all("span", class_="rainfall")[1].text
 
 # 현재 시간
 current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -38,7 +45,9 @@ print("현재시간:", current_time)
 print("지역:", location)
 print("현재 온도:", current_temperature)
 print("현재 날씨:", current_weather_condition)
-print(f"체감 온도: {sensation}, 현재 습도: {humidity}, 풍속: {wind_speed}")
+print(f"체감 온도: {sensation},\n현재 습도: {humidity},\n풍속     : {wind_speed}")
+print(f"오전 강수 확률: {morning_rainfall}")
+print(f"오후 강수 확률: {afternoon_rainfall}")
 
 #%%
 
@@ -52,10 +61,17 @@ soup_weather = BeautifulSoup(html_weather, "lxml")
 print(url,'\n')
 
 # 현재 온도
-current_temperature = soup_weather.find("div", {"class": "temperature_text"}).text
+current_temperature = soup_weather.find("div", {"class": "temperature_text"}).text.replace('현재 온도', '')
+# current_temperature = soup_weather.select_one('div.temperature_text strong').get_text().replace('현재 온도', '')
 
 # 현재 날씨
 current_weather_condition = soup_weather.find("p", {"class": "summary"}).text
+# current_weather_condition = soup_weather.select_one('span.weather before_slash').get_text()
+
+# 오전 강수 확률
+morning_rainfall = soup_weather.find("span", class_="rainfall").text
+# 오후 강수 확률
+afternoon_rainfall = soup_weather.find_all("span", class_="rainfall")[1].text
 
 # 현재 시간
 current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -69,7 +85,9 @@ print("현재시간:", current_time)
 print("지역:", location)
 print("현재 온도:", current_temperature)
 print("현재 날씨:", current_weather_condition)
-print(f"체감 온도: {sensation}, 현재 습도: {humidity}, 풍속: {wind_speed}")
+print(f"체감 온도: {sensation},\n현재 습도: {humidity},\n풍속     : {wind_speed}")
+print(f"오전 강수 확률: {morning_rainfall}")
+print(f"오후 강수 확률: {afternoon_rainfall}")
 
 #%%
 
@@ -83,10 +101,17 @@ soup_weather = BeautifulSoup(html_weather, "lxml")
 print(url,'\n')
 
 # 현재 온도
-current_temperature = soup_weather.find("div", {"class": "temperature_text"}).text
+current_temperature = soup_weather.find("div", {"class": "temperature_text"}).text.replace('현재 온도', '')
+# current_temperature = soup_weather.select_one('div.temperature_text strong').get_text().replace('현재 온도', '')
 
 # 현재 날씨
 current_weather_condition = soup_weather.find("p", {"class": "summary"}).text
+# current_weather_condition = soup_weather.select_one('span.weather before_slash').get_text()
+
+# 오전 강수 확률
+morning_rainfall = soup_weather.find("span", class_="rainfall").text
+# 오후 강수 확률
+afternoon_rainfall = soup_weather.find_all("span", class_="rainfall")[1].text
 
 # 현재 시간
 current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -100,7 +125,9 @@ print("현재시간:", current_time)
 print("지역:", location)
 print("현재 온도:", current_temperature)
 print("현재 날씨:", current_weather_condition)
-print(f"체감 온도: {sensation}, 현재 습도: {humidity}, 풍속: {wind_speed}")
+print(f"체감 온도: {sensation},\n현재 습도: {humidity},\n풍속     : {wind_speed}")
+print(f"오전 강수 확률: {morning_rainfall}")
+print(f"오후 강수 확률: {afternoon_rainfall}")
 
 #%%
 
@@ -114,10 +141,17 @@ soup_weather = BeautifulSoup(html_weather, "lxml")
 print(url,'\n')
 
 # 현재 온도
-current_temperature = soup_weather.find("div", {"class": "temperature_text"}).text
+current_temperature = soup_weather.find("div", {"class": "temperature_text"}).text.replace('현재 온도', '')
+# current_temperature = soup_weather.select_one('div.temperature_text strong').get_text().replace('현재 온도', '')
 
 # 현재 날씨
 current_weather_condition = soup_weather.find("p", {"class": "summary"}).text
+# current_weather_condition = soup_weather.select_one('span.weather before_slash').get_text()
+
+# 오전 강수 확률
+morning_rainfall = soup_weather.find("span", class_="rainfall").text
+# 오후 강수 확률
+afternoon_rainfall = soup_weather.find_all("span", class_="rainfall")[1].text
 
 # 현재 시간
 current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -131,4 +165,6 @@ print("현재시간:", current_time)
 print("지역:", location)
 print("현재 온도:", current_temperature)
 print("현재 날씨:", current_weather_condition)
-print(f"체감 온도: {sensation}, 현재 습도: {humidity}, 풍속: {wind_speed}")
+print(f"체감 온도: {sensation},\n현재 습도: {humidity},\n풍속     : {wind_speed}")
+print(f"오전 강수 확률: {morning_rainfall}")
+print(f"오후 강수 확률: {afternoon_rainfall}")
