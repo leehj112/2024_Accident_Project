@@ -248,6 +248,8 @@ print(corr_risk)
 [200 rows x 10 columns]
 """
 
+corr_risk.to_csv('요인별 위험지수(가중치부여).csv')
+
 #%%
 accident_corr = accidents.merge(corr_risk, on = ['주야간', '구', '노면상태', '기상상태'])
 accident_corr = accident_corr[['주야간', '구', '노면상태', '기상상태','사고건수', 'corr_risk']]
