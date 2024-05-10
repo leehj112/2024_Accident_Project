@@ -48,6 +48,7 @@ print("여자:", count_over_65_women_팔달)
 
 #%%
 
+# 원 그래프로 65세 이상 남녀 노인면허 소지비율 표현
 region_data = {
     '경기 수원 장안': [count_over_65_men_장안, count_over_65_women_장안],
     '경기 수원 권선': [count_over_65_men_권선, count_over_65_women_권선],
