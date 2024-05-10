@@ -14,7 +14,7 @@ font_path = 'C:/Windows/Fonts/malgun.ttf'
 font_name = font_manager.FontProperties(fname = font_path).get_name()
 rc('font', family = font_name)
 
-df = pd.read_excel('E:/Workspace/!project_team/The elderly driver traffic accidents(suwon).xlsx')
+df = pd.read_excel('./The elderly driver traffic accidents(suwon).xlsx')
 
 #%% 전처리
 # [사고일시] -> datetime
