@@ -6,14 +6,8 @@ Created on Tue May  7 11:20:02 2024
 """
 
 import pandas as pd
-"""
-> conda activate YSIT24
-> pip install xlrd
-"""
-#df = pd.read_excel('E:/Workspace/!project_team/1.사전조사_240507/accidentInfoList_TAAS_경기도수원2023_전체.xls', engine='openpyxl')
 
-#%%
-df = pd.read_csv('E:/Workspace/!project_team/1.사전조사_240507/accidentInfoList_TAAS_경기도수원2023_전체.csv', low_memory=False, encoding='CP949')
+df = pd.read_csv('./accidentInfoList_TAAS_경기도수원2023_전체.csv', low_memory=False, encoding='CP949')
 
 df.info()
 """
@@ -130,53 +124,3 @@ df['피해운전자 상해정도'].unique()
 array(['경상', '중상', '부상신고', nan, '상해없음', '기타불명', '사망'], dtype=object)
 """
 
-#%%
-"""
- 18  피해운전자 차종    4599 non-null   object
- 19  피해운전자 성별    4599 non-null   object
- 20  피해운전자 연령    4599 non-null   object
- 21  피해운전자 상해정도  4599 non-null   object
-"""
-
-df.iloc[:, 18:22].isna().sum()
-"""
-피해운전자 차종      145
-피해운전자 성별      145
-피해운전자 연령      145
-피해운전자 상해정도    145
-dtype: int64
-"""
-
-df.iloc[:, 18:22] = df.iloc[:, 18:22].fillna(0)
-
-df.iloc[:, 18:22].isna().sum()
-"""
-피해운전자 차종      0
-피해운전자 성별      0
-피해운전자 연령      0
-피해운전자 상해정도    0
-dtype: int64
-"""
-
-#%%
-# 시군구 -> 군/ 구
-df['군구'] = df['시군구'].str.split(' ')
-
-gun = []
-for i in range(len(df)) :
-    gun.append(df['군구'][i][2])
-df['군'] = gun    
-
-gu = []
-for i in range(len(df)) :
-    gu.append(df['군구'][i][3])
-df['구'] = gu
-
-
-gu = []
-dong = []
-for i in range(len(df)) :
-    gu.append(df['시군구'].str.split(' ')[i][2])
-    dong.append(df['시군구'].str.split(' ')[i][3])
-df['구'] = gu 
-df['동'] = dong
