@@ -7,7 +7,7 @@ Created on Tue May  7 14:13:30 2024
 
 import pandas as pd
 
-df = pd.read_excel('E:/Workspace/!project_team/The elderly driver traffic accidents(suwon).xlsx')
+df = pd.read_excel('./The elderly driver traffic accidents(suwon).xlsx')
 
 #%%
 # [사고일시] -> datetime
@@ -87,5 +87,4 @@ df['피해운전자 연령'] = df['피해운전자 연령'].fillna(0)
 
 df['피해운전자 연령'] = df['피해운전자 연령'].astype('int64')
 
-#%%
 
