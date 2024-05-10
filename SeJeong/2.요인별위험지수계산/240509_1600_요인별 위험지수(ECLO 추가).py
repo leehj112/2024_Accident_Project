@@ -155,6 +155,9 @@ for i, j in [(4,10),(5,11),(6,12),(7,13)] :
     val = element_risk.iloc[:, i]*element_risk.iloc[:, j]
     element_risk['eclo_risk_mul'] = element_risk['eclo_risk_mul'] + val
     
+
+element_risk.to_csv('요인별 위험지수(ECLO 추가).csv')
+    
 #%%
 ###############################################################################
 # 위험지수 총계와 해당 조건에 따른 실제 사고건수 비교
@@ -223,8 +226,6 @@ print(accident_risk)
 
 [53 rows x 9 columns]
 """
-
-accident_risk.to_csv('요인별 위험지수(ECLO 추가).csv')
 
 #%%
 ###############################################################################
