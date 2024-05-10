@@ -45,9 +45,12 @@ print("여자:", count_over_65_women_영통)
 print("남자:", count_over_65_men_팔달)
 print("여자:", count_over_65_women_팔달)
 
+
 #%%
 
-# 수원시 구별 노인 운전면허 소지 비율
+# prompt: 위 원그래프의 비율 바로 밑에 '경기 수원 권선' 지역의 남자, 여자 '계'도 숫자로 적어줘
+
+# Create a dictionary to store the data for each region
 region_data = {
     '경기 수원 장안': [count_over_65_men_장안, count_over_65_women_장안],
     '경기 수원 권선': [count_over_65_men_권선, count_over_65_women_권선],
@@ -55,8 +58,21 @@ region_data = {
     '경기 수원 팔달': [count_over_65_men_팔달, count_over_65_women_팔달]
 }
 
+# Create a pie chart for each region
 for region, data in region_data.items():
-    plt.figure(figsize=(3, 3))
-    plt.pie(data, labels=['남자', '여자'],autopct="%1.1f%%")
-    plt.title(f'{region} 65세 이상 면허 소지 비율')
+    plt.figure(figsize=(5, 5))
+    plt.pie(data, labels=['남자', '여자'], autopct="%1.1f%%", startangle=90)
+    plt.title(f'{region} 65세 이상 인구 비율')
+    if region == '경기 수원 장안':
+      plt.text(-0.67, -0.45, f"{data[0]}", fontsize=9)
+      plt.text(0.37, 0.17, f"{data[1]}", fontsize=9)
+    if region == '경기 수원 권선':
+      plt.text(-0.67, -0.45, f"{data[0]}", fontsize=9)
+      plt.text(0.37, 0.17, f"{data[1]}", fontsize=9)
+    if region == '경기 수원 영통':
+      plt.text(-0.7, -0.36, f"{data[0]}", fontsize=9)
+      plt.text(0.4, 0.13, f"{data[1]}", fontsize=9)
+    if region == '경기 수원 팔달':
+      plt.text(-0.67, -0.45, f"{data[0]}", fontsize=9)
+      plt.text(0.37, 0.17, f"{data[1]}", fontsize=9)            
     plt.show()
