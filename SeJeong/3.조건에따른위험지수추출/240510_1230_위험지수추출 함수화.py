@@ -99,14 +99,12 @@ def road_result(weather, current_temperature, rainfall, humidity) :
             result='기타'
     #흐림       
     elif weather=='흐림':
-        if rainfall>=50 and current_temperature<0 and 80<humidity<=100:
+        if rainfall>=50 and current_temperature<0 :
             result='적설'
-        elif 0<rainfall<50 and current_temperature>=0 and 80<humidity==100:
+        elif 1<rainfall<50 :
             result=='젖음/습기'
-        elif rainfall==0 and 80<humidity==100:
-            result='건조'
         else:
-            result='기타'            
+            result='건조'          
     #기타       
     else:
         result='기타'
