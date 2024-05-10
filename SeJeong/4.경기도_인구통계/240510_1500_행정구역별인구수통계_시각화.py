@@ -98,7 +98,7 @@ ax.bar(sw_people['연도'], sw_people['전체'], alpha=0.7, color='red', label='
 ax2 = ax.twinx()  # 오른쪽 축 생성
 ax2.plot(sw_people['연도'], sw_people['65세이상비율'], color='blue', label='65세이상 인구비율')
 ax.set_xlabel('연도')
-ax.set_ylabel('인구수(명)')
+ax.set_ylabel('인구수(백만명)')
 ax2.set_ylabel('인구비율(%)')
 lines1, labels1 = ax.get_legend_handles_labels()
 lines2, labels2 = ax2.get_legend_handles_labels()
@@ -138,7 +138,7 @@ ax.bar(sw_df.index, sw_df['2024_전체'], alpha=0.7, color='red', label='인구�
 ax2 = ax.twinx()  # 오른쪽 축 생성
 ax2.plot(sw_df.index, sw_df['전체_65세이상비율'], color='blue', label='65세이상 인구비율')
 ax.set_xlabel('행정구역')
-ax.set_ylabel('인구수(명)')
+ax.set_ylabel('인구수(백만명)')
 ax2.set_ylabel('인구비율(%)')
 lines1, labels1 = ax.get_legend_handles_labels()
 lines2, labels2 = ax2.get_legend_handles_labels()
