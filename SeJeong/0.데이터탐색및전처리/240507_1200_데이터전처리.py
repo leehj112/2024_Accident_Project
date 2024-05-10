@@ -7,7 +7,7 @@ Created on Tue May  7 12:24:38 2024
 
 import pandas as pd
 
-df = pd.read_csv('E:/Workspace/!project_team/1.사전조사_240507/accidentInfoList_TAAS_경기도수원2023_전체.csv', low_memory=False, encoding='CP949')
+df = pd.read_csv('./accidentInfoList_TAAS_경기도수원2023_전체.csv', low_memory=False, encoding='CP949')
 
 #%%
 # [사고일시] -> datetime
