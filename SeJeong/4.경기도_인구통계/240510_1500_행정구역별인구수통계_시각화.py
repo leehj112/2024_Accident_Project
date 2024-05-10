@@ -40,6 +40,30 @@ plt.ylabel('전체인구수')
 plt.grid(True)
 plt.show()
 
+# 연도별 65세이상 인구비율
+plt.plot(gg_people['연도'], gg_people['65세이상비율'], linestyle='-')
+plt.title('연도별 65세이상 인구비율')
+plt.xlabel('연도')
+plt.ylabel('65세이상 인구비율')
+plt.grid(True)
+plt.show()
+
+# 연도별 전체 인구수 & 65세이상 인구비율
+plt.figure(figsize=(10, 6))
+ax = plt.axes()  # 하나의 축 공유
+ax.bar(gg_people['연도'], gg_people['전체'], alpha=0.7, color='red', label='전체인구수')
+ax2 = ax.twinx()  # 오른쪽 축 생성
+ax2.plot(gg_people['연도'], gg_people['65세이상비율'], color='blue', label='65세이상 인구비율')
+ax.set_xlabel('연도')
+ax.set_ylabel('인구수(명)')
+ax2.set_ylabel('인구비율(%)')
+lines1, labels1 = ax.get_legend_handles_labels()
+lines2, labels2 = ax2.get_legend_handles_labels()
+ax.legend(lines1 + lines2, labels1 + labels2, loc='upper left')
+ax.set_ylim([0, gg_people['전체'].max() + gg_people['전체'].max() * 0.1])  # 막대와 선이 겹치지 않도록 Y 축 범위 조정
+plt.show()
+
+#%%
 # 노인 구분에 따른 인구수 비율
 plt.figure(figsize=(12, 6))
 
