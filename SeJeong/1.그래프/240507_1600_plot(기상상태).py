@@ -15,7 +15,7 @@ font_name = font_manager.FontProperties(fname = font_path).get_name()
 rc('font', family = font_name)
 
 #%%
-df = pd.read_excel('E:/Workspace/!project_team/The elderly driver traffic accidents(suwon).xlsx')
+df = pd.read_excel('./The elderly driver traffic accidents(suwon).xlsx')
 
 # [사고일시] -> datetime
 df['사고일시'] = pd.to_datetime(df['사고일시'], format='%Y년 %m월 %d일 %H시')  ## 2023-01-01 00:00:00
