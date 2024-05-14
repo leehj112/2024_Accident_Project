@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue May 14 14:57:03 2024
+Created on Tue May 14 14:59:25 2024
 
 @author: HONGHAE
 """
 
-import folium
+import streamlit as st
 import pandas as pd
 import json
+from streamlit_folium import folium_static
+import folium
 
 # 데이터 불러오기
 df = pd.read_csv('./요인별 위험지수(ECLO 추가).csv', encoding='cp949')
@@ -49,8 +51,13 @@ for feature in data['features']:
         popup=popup
     ).add_to(m)
 
-# 맵 m을 출력
-m
+# 스트림릿 애플리케이션을 구성
+st.markdown('<h1 style="text-align: center;">수원시 ECLO 위험지수 지도</h1>', unsafe_allow_html=True)
+folium_static(m)
 
-# 맵 m을 저장
-m.save('map2.html')
+#%%
+
+## 스트림릿 실행 방법
+# 1. 아나콘다 파워셸 프롬프트 실행 후 이 파일을 저장한 경로로 설정
+# 2. pip install (streamlit / folium / streamlit-folium) 등 3가지 라이브러리 설치 진행
+# 3. 위의 두가지 상황을 충족 시킨 후 프롬프트 콘솔에 "streamlit run 파일명.py" 실행하면 끝 
