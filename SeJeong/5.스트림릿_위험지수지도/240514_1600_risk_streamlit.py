@@ -189,7 +189,8 @@ folium.Choropleth(
     data = sw_risk,
     columns=('index','위험지수'),
     key_on='feature.properties.SIG_KOR_NM',
-    fill_color='BuPu',
+    fill_color='YlOrRd',
+    ## 'BuGn', 'BuPu', 'GnBu', 'OrRd', 'PuBu', 'PuBuGn', 'PuRd', 'RdPu', 'YlGn', 'YlGnBu', 'YlOrBr', and 'YlOrRd'
     legend_name='ECLO',
     ).add_to(m)
 
