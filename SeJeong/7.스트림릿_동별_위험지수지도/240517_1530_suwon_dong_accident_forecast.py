@@ -182,7 +182,9 @@ sw_risk = sw_risk.reset_index()
 #%%
 name_list = []
 # 각 '동'에 대한 팝업 추가
-#   -> 오류 발생
+#   -> 오류 발생 : '상광교동', '장지동' 교통사고 데이터 기준 없음
+#    -> 네이버 검색 결과 '상광교동 = 연무동', '장지동 = 세류동'
+#        -> 해당 값으로 지도에 위험지수 표시 
 for feature in data['features']:
     properties = feature['properties']
     name = properties['EMD_KOR_NM']    
@@ -202,6 +204,7 @@ sw_plus = pd.DataFrame({'index' : ['상광교동', '장지동'],
                                   sw_risk.loc[sw_risk['index']=='세류동', '위험지수'].values[0]]})
 sw_risk = pd.concat([sw_risk, sw_plus])
 
+#%%
 # 수원시 중심부의 위도, 경도
 center = [37.2636, 127.0286]
 
